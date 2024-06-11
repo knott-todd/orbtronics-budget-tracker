@@ -4,6 +4,6 @@ import jsconfigPaths from 'vite-jsconfig-paths'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/orbtronics-budget-tracker/',
   plugins: [react(), jsconfigPaths()],
-  base: '/orbtronics-budget-tracker/'
 })
