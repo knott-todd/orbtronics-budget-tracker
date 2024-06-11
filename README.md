@@ -1,3 +1,3 @@
 # The Orbtronic Budget Tracker
 
-run ```npm i``` in terminal to get started
+run ```npm i``` from terminal while in the roon folder to get started.
