@@ -1,16 +1,5 @@
 # The Orbtronic Budget Tracker
 
-# Documentation
-
-## Project Report Summary
-
-The Orbtronics Budget Tracker was developed using React and follows the MVVM architecture to ensure a clean separation of concerns. Key features include user authentication, income and expense management, and detailed budget categorization. Material-UI was utilized for styling, resulting in a responsive and cohesive UI. The application was thoroughly tested and deployed using GitHub Pages, with a CI/CD workflow set up for continuous integration.
-
-## Technical Challenges
-
-- **State Management**: Initially faced challenges with state management and dependency injection. This was resolved by implementing a `ViewManagerContextProvider`, which exposes use case-related functions and context state to its children.
-- **Data Streams**: Implemented real-time data streams for categories and logs, ensuring dynamic updates without excessive client-triggered GET calls.
-
 ## User Manual
 
 ### Overview
