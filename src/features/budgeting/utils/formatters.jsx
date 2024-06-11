@@ -1,4 +1,4 @@
-export function formatCurrencyWithMaxFigures (value, maxFigures) {
+export function formatCurrencyWithMaxFigures(value, maxFigures) {
     const absValue = Math.abs(value);
     const sign = value < 0 ? '-' : '';
 
@@ -40,7 +40,7 @@ export function formatCurrencyWithMaxFigures (value, maxFigures) {
                 suffix = 'T'
                 break;
         }
-    } 
+    }
 
     return `${sign}$${shortenedValue.toFixed(1)}${suffix}`;
 };
@@ -55,17 +55,17 @@ export const currencyFormatter = new Intl.NumberFormat('en-US', {
 export function formatMonthYear(date) {
     const year = date.getFullYear();
     const month = date.getMonth(); // Month index (0-11)
-    
+
     // Create a new Date object with the same year and month
     const monthDate = new Date(year, month);
-    
+
     // Format the month using the Intl.DateTimeFormat object
     const monthFormatter = new Intl.DateTimeFormat('en-US', { month: 'long' });
     const formattedMonth = monthFormatter.format(monthDate);
-    
+
     // Format the year to a two-digit format
     const formattedYear = `'${year.toString().slice(-2)}`;
-    
+
     // Combine the formatted month and year
     return `${formattedMonth} ${formattedYear}`;
 }

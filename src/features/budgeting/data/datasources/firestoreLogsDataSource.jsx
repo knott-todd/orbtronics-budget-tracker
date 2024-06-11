@@ -1,6 +1,6 @@
-import { Timestamp, updateDoc, where, collection, addDoc, deleteDoc, getDoc, query, getDocs, doc, onSnapshot } from 'firebase/firestore';
-import { firestore } from '../../../../services/firebaseConfig';
+import { Timestamp, addDoc, collection, deleteDoc, doc, getDoc, onSnapshot, query, updateDoc, where } from 'firebase/firestore';
 import { Subject, finalize } from 'rxjs';
+import { firestore } from '../../../../services/firebaseConfig';
 
 export async function createLog(userID, categoryID, categoryName, amount, description) {
     try {

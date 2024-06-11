@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import TextInputField from "../../../../components/TextInputField";
-import { useAuthViewModelContext } from "../contexts/AuthViewModelContext";
-import { Link as RouterLink } from "react-router-dom";
 import { Box, Button, Container, Link, Stack, Typography } from "@mui/material";
-import MedSpacer from "../../../../components/MedSpacer";
-import ThinSpacer from "../../../../components/ThinSpacer";
-import { object, ref, string } from "yup";
+import { useEffect, useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import { populateFormWithEvent } from "utils/populateFormWithEvent";
+import { object, ref, string } from "yup";
+import MedSpacer from "../../../../components/MedSpacer";
+import TextInputField from "../../../../components/TextInputField";
+import ThinSpacer from "../../../../components/ThinSpacer";
+import { useAuthViewModelContext } from "../contexts/AuthViewModelContext";
 
 export default function SignupView() {
 
@@ -22,13 +22,13 @@ export default function SignupView() {
     })
     const [errors, setErrors] = useState({})
 
-    async function handleChange (e) {
+    async function handleChange(e) {
         populateFormWithEvent(e, setFormData)
     }
 
     useEffect(() => {
-        if(error) {
-            setErrors(errors => ({...errors, ...error}))
+        if (error) {
+            setErrors(errors => ({ ...errors, ...error }))
         }
     }, [error])
 
@@ -45,14 +45,14 @@ export default function SignupView() {
             .required("Confirm password is required")
             .oneOf([ref("password")], "Passwords do not match")
     })
-    
 
-    async function handleSubmit (e) {
+
+    async function handleSubmit(e) {
         e.preventDefault();
 
         try {
-            await validationSchema.validate(formData, {abortEarly: false})
-            
+            await validationSchema.validate(formData, { abortEarly: false })
+
             signUpWithEmailAndPassword(formData.email, formData.password);
         } catch (err) {
 
@@ -68,7 +68,7 @@ export default function SignupView() {
 
     return (
         <Container maxWidth="sm">
-            <Stack sx={{height: "75vh", paddingTop: 15}}>
+            <Stack sx={{ height: "75vh", paddingTop: 15 }}>
                 {/* Signup header */}
                 <Typography variant="h1">Signup</Typography>
 
@@ -77,10 +77,10 @@ export default function SignupView() {
                 {/* Signup form */}
                 <form>
                     {/* Email */}
-                    <TextInputField 
+                    <TextInputField
                         required
-                        value={formData.email} 
-                        handleChange={handleChange} 
+                        value={formData.email}
+                        handleChange={handleChange}
                         label="Email"
                         name={'email'}
                         error={errors.email !== null}
@@ -88,28 +88,28 @@ export default function SignupView() {
                     />
 
                     {/* Password */}
-                    <TextInputField 
-                        name={'password'} 
-                        required 
-                        value={formData.password} 
-                        handleChange={handleChange} 
+                    <TextInputField
+                        name={'password'}
+                        required
+                        value={formData.password}
+                        handleChange={handleChange}
                         label="Password"
                         error={errors.password !== null}
                         helperText={errors.password}
                         type='password'
-                    /> 
+                    />
 
                     {/* Confirm password */}
-                    <TextInputField 
-                        name={'confirm'} 
-                        required 
-                        value={formData.confirm} 
-                        handleChange={handleChange} 
+                    <TextInputField
+                        name={'confirm'}
+                        required
+                        value={formData.confirm}
+                        handleChange={handleChange}
                         label="Confirm Password"
                         error={errors.password !== null}
                         helperText={errors.password}
                         type='password'
-                    /> 
+                    />
 
                     <ThinSpacer />
 
@@ -118,7 +118,7 @@ export default function SignupView() {
                 </form>
 
                 {/* <LargeSpacer /> */}
-                <Box sx={{flexGrow: 1}} />
+                <Box sx={{ flexGrow: 1 }} />
 
                 {/* Submit */}
                 <Button size="large" variant="outlined" onClick={handleSubmit}>Sign up</Button>

@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useLogsViewModelContext } from '../contexts/LogsViewModelContext';
-import { calculateNetExpensesOnLogs, calculateNetIncomeOnLogs } from '../../utils/calculateIncomeExpense';
 import { useLogs } from 'features/budgeting/hooks/useLogs';
+import { useEffect, useState } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
+import { useNavigate } from 'react-router-dom';
+import { calculateNetExpensesOnLogs, calculateNetIncomeOnLogs } from '../../utils/calculateIncomeExpense';
 
 // Role: Maintain communication (data binding) between domain and views, i.e. state management + use cases
 export default function CategoriesViewModel({
@@ -28,7 +27,7 @@ export default function CategoriesViewModel({
     useEffect(() => {
         // Cleanup function to unsubscribe from the stream
         return () => {
-            if(stream) {
+            if (stream) {
                 stream.unsubscribe();
             }
         };
@@ -85,19 +84,19 @@ export default function CategoriesViewModel({
 
     // get all categories
     async function getCategories(userID) {
-        if(!stream) {
+        if (!stream) {
             const { result, error } = await GetCategoriesUseCase.execute(userID);
             setError(error);
-            if(error) {
+            if (error) {
                 showBoundary(error)
             }
             if (result) {
-    
+
                 // Subscribe to the categories stream
                 const subscription = result.subscribe(newCategories => {
                     setCategoriesWithClientSideAggregation(newCategories);
                 });
-    
+
                 setStream(subscription);
             }
         }
@@ -107,7 +106,7 @@ export default function CategoriesViewModel({
     async function getCategory(categoryID) {
         const { result, error } = await GetCategoryUseCase.execute(categoryID);
         setError(error);
-        if(error) {
+        if (error) {
             showBoundary(error)
         }
         if (result) {
@@ -119,7 +118,7 @@ export default function CategoriesViewModel({
     async function createCategory(userID, name, type, value, isIncome) {
         const { result, error } = await CreateCategoryUseCase.execute(userID, name, type, value, isIncome);
         setError(error);
-        if(error) {
+        if (error) {
             showBoundary(error)
         }
         if (result) {
@@ -133,7 +132,7 @@ export default function CategoriesViewModel({
     async function updateCategory(categoryID, name, type, value, isIncome) {
         const { result, error } = await UpdateCategoryUseCase.execute(categoryID, name, type, parseInt(value), isIncome);
         setError(error);
-        if(error) {
+        if (error) {
             showBoundary(error)
         }
         if (result) {
@@ -146,7 +145,7 @@ export default function CategoriesViewModel({
     async function deleteCategory(categoryID) {
         const { result, error } = await DeleteCategoryUseCase.execute(categoryID);
         setError(error);
-        if(error) {
+        if (error) {
             showBoundary(error)
         }
         if (result) {

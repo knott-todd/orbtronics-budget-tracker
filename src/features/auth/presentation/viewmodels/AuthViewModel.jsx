@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useErrorBoundary } from "react-error-boundary";
 import { useNavigate } from "react-router-dom";
 
@@ -30,12 +30,12 @@ export default function AuthViewModel({ LoginWithGoogleUseCase, LoginWithEmailAn
             // Handle specific error codes
             switch (error.code) {
                 case 'auth/invalid-credential':
-                    setError({password: 'Incorrect email or password'})
+                    setError({ password: 'Incorrect email or password' })
                     break;
                 case 'auth/too-many-requests':
-                    setError({password: 'Too many unsuccesful attempts. Please try again later.'})
+                    setError({ password: 'Too many unsuccesful attempts. Please try again later.' })
                 default:
-                    setError({unexpected: 'An unexpected error has occured'})
+                    setError({ unexpected: 'An unexpected error has occured' })
                     showBoundary(error)
             }
         }
@@ -52,12 +52,12 @@ export default function AuthViewModel({ LoginWithGoogleUseCase, LoginWithEmailAn
             // Handle specific error codes
             switch (error.code) {
                 case 'auth/email-already-in-use':
-                    setError({email: 'Email already in use'})
+                    setError({ email: 'Email already in use' })
                     break;
                 case 'auth/weak-password':
-                    setError({password: 'Password is not strong enough'})
+                    setError({ password: 'Password is not strong enough' })
                 default:
-                    setError({unexpected: 'An unexpected error has occured'})
+                    setError({ unexpected: 'An unexpected error has occured' })
             }
         }
         if (result) {

@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useErrorBoundary } from 'react-error-boundary';
 import { useNavigate } from 'react-router-dom';
 import { calculateNetExpensesOnLogs, calculateNetIncomeOnLogs } from '../../utils/calculateIncomeExpense';
-import { useErrorBoundary } from 'react-error-boundary';
 
 export default function LogsViewModel({
     GetLogsUseCase,
@@ -24,7 +24,7 @@ export default function LogsViewModel({
     useEffect(() => {
         // Cleanup function to unsubscribe from the stream
         return () => {
-            if(stream) {
+            if (stream) {
                 stream.unsubscribe();
             }
         };
@@ -32,7 +32,7 @@ export default function LogsViewModel({
 
     // Calculate net income, expense, and balance
     useEffect(() => {
-        if(logs.length > 0) {
+        if (logs.length > 0) {
             const _netIncome = calculateNetIncomeOnLogs(logs)
             const _netExpenses = calculateNetExpensesOnLogs(logs)
             setNetIncome(_netIncome)
@@ -49,14 +49,14 @@ export default function LogsViewModel({
     async function getLogs(userID) {
 
         if (stream) {
-            
+
             setLogs(logs => [...logs])
 
         } else {
             const { result, error } = await GetLogsUseCase.execute(userID);
             setError(error);
 
-            if(error) {
+            if (error) {
                 showBoundary(error)
             }
 
@@ -65,12 +65,12 @@ export default function LogsViewModel({
                 // if (stream) {
                 //     // stream.unsubscribe();
                 // } {
-    
+
                 // Subscribe to the logs stream
                 const subscription = result.subscribe(newLogs => {
                     setLogs(newLogs);
                 });
-    
+
                 setStream(subscription);
 
                 // }
@@ -84,7 +84,7 @@ export default function LogsViewModel({
     async function getLog(logID) {
         const { result, error } = await GetLogUseCase.execute(logID);
         setError(error);
-        if(error) {
+        if (error) {
             showBoundary(error)
         }
         if (result) {
@@ -96,7 +96,7 @@ export default function LogsViewModel({
     async function createLog(userID, categoryID, categoryName, amount, description) {
         const { result, error } = await CreateLogUseCase.execute(userID, categoryID, categoryName, amount, description);
         setError(error);
-        if(error) {
+        if (error) {
             showBoundary(error)
         }
         if (result) {
@@ -109,7 +109,7 @@ export default function LogsViewModel({
     async function updateLog(id, categoryID, categoryName, amount, description) {
         const { result, error } = await UpdateLogUseCase.execute(id, categoryID, categoryName, amount, description);
         setError(error);
-        if(error) {
+        if (error) {
             showBoundary(error)
         }
         if (result) {
@@ -122,7 +122,7 @@ export default function LogsViewModel({
     async function deleteLog(logID) {
         const { result, error } = await DeleteLogUseCase.execute(logID);
         setError(error);
-        if(error) {
+        if (error) {
             showBoundary(error)
         }
         if (result) {

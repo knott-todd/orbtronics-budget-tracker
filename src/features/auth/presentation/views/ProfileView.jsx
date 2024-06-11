@@ -1,6 +1,6 @@
 import { Button, Container, Stack, Typography } from "@mui/material";
-import { useAuthViewModelContext } from "../contexts/AuthViewModelContext";
 import MedSpacer from "../../../../components/MedSpacer";
+import { useAuthViewModelContext } from "../contexts/AuthViewModelContext";
 
 export default function ProfileView() {
 
@@ -8,7 +8,7 @@ export default function ProfileView() {
 
     return (
         <Container>
-            <Stack sx={{paddingTop: 15, height: '80vh'}} alignItems={'center'} justifyContent='flex-end'>
+            <Stack sx={{ paddingTop: 15, height: '80vh' }} alignItems={'center'} justifyContent='flex-end'>
                 {authState.user && (
                     <>
                         {/* Logged in as... */}

@@ -1,6 +1,6 @@
+import { useAuthViewModelContext } from "features/auth/presentation/contexts/AuthViewModelContext";
 import { useEffect } from "react";
 import { useLogsViewModelContext } from "../presentation/contexts/LogsViewModelContext";
-import { useAuthViewModelContext } from "features/auth/presentation/contexts/AuthViewModelContext";
 
 export const useLogs = () => {
     const { logs, getLogs } = useLogsViewModelContext();

@@ -1,19 +1,16 @@
-import { Outlet, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import CategorySummaryListView from "./features/budgeting/presentation/views/CategorySummaryListView";
-import BudgetLogsView from "./features/budgeting/presentation/views/BudgetLogsView";
-import CategoryLogsView from "./features/budgeting/presentation/views/CategoryLogsView";
-import EditCategoryView from "./features/budgeting/presentation/views/EditCategoryView";
-import NewCategoryView from "./features/budgeting/presentation/views/NewCategoryView";
-import EditBudgetlogView from "./features/budgeting/presentation/views/EditBudgetLogView";
-import NewBudgetlogView from "./features/budgeting/presentation/views/NewBudgetLogView";
-import LoginView from "./features/auth/presentation/views/LoginView";
-import SignupView from "./features/auth/presentation/views/SignupView";
-import ProfileView from "./features/auth/presentation/views/ProfileView";
-import { LogsViewModelProvider } from "./features/budgeting/presentation/contexts/LogsViewModelContext";
-import { CategoriesViewModelProvider } from "./features/budgeting/presentation/contexts/CategoriesViewModelContext";
 import { MainLayout } from "layout/MainLayout";
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import LoginView from "./features/auth/presentation/views/LoginView";
+import ProfileView from "./features/auth/presentation/views/ProfileView";
+import SignupView from "./features/auth/presentation/views/SignupView";
+import BudgetLogsView from "./features/budgeting/presentation/views/BudgetLogsView";
+import CategoryLogsView from "./features/budgeting/presentation/views/CategoryLogsView";
+import CategorySummaryListView from "./features/budgeting/presentation/views/CategorySummaryListView";
+import EditBudgetlogView from "./features/budgeting/presentation/views/EditBudgetLogView";
+import EditCategoryView from "./features/budgeting/presentation/views/EditCategoryView";
+import NewBudgetlogView from "./features/budgeting/presentation/views/NewBudgetLogView";
+import NewCategoryView from "./features/budgeting/presentation/views/NewCategoryView";
 
 export default function MainRouter() {
 

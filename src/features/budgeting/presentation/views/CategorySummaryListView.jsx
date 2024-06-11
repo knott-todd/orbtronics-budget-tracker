@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom";
-import NewLogButton from "../components/ui/NewLogButton";
-import { useCategoriesViewModelContext } from "../contexts/CategoriesViewModelContext";
 import { Button, Divider } from "@mui/material";
-import MedSpacer from "../../../../components/MedSpacer";
-import LargeSpacer from "../../../../components/LargeSpacer";
-import ThinSpacer from "../../../../components/ThinSpacer";
-import NetIncomeExpenseBalanceHeader from "../components/NetIncomeExpenseBalanceHeader";
-import PageContainer from "../../../../layout/PageContainer";
-import MonthSelector from "../components/MonthSelector";
-import CategorySummary from "../components/CategorySummary";
 import { useCategories } from "features/budgeting/hooks/useCategories";
 import React from "react";
+import { Link } from "react-router-dom";
+import LargeSpacer from "../../../../components/LargeSpacer";
+import MedSpacer from "../../../../components/MedSpacer";
+import ThinSpacer from "../../../../components/ThinSpacer";
+import PageContainer from "../../../../layout/PageContainer";
+import CategorySummary from "../components/CategorySummary";
+import MonthSelector from "../components/MonthSelector";
+import NetIncomeExpenseBalanceHeader from "../components/NetIncomeExpenseBalanceHeader";
+import NewLogButton from "../components/ui/NewLogButton";
+import { useCategoriesViewModelContext } from "../contexts/CategoriesViewModelContext";
 
 export default function CategorySummaryListView() {
 
@@ -42,13 +42,13 @@ export default function CategorySummaryListView() {
             <ThinSpacer />
 
             {/* Add category */}
-            <Button 
+            <Button
                 fullWidth
                 size="large"
-                component={Link} 
-                to="/categories/new" 
+                component={Link}
+                to="/categories/new"
                 role="link">+ Add category</Button>
-                    
+
             {/* Floating new entry button */}
             <NewLogButton />
         </PageContainer>

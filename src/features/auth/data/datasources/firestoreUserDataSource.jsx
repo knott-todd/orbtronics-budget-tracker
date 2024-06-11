@@ -1,6 +1,5 @@
-import { onSnapshot, updateDoc, where, collection, addDoc, deleteDoc, getDoc, getDocs, query, doc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDoc, updateDoc } from "firebase/firestore";
 import { firestore } from "../../../../services/firebaseConfig";
-import { Subject, finalize } from "rxjs";
 
 // Create a new user
 export async function createUser(name, email, age) {

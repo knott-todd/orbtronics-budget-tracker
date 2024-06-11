@@ -15,22 +15,22 @@ const defaultAuthViewModel = {
 const AuthViewModelContext = createContext(defaultAuthViewModel);
 
 export const AuthViewModelProvider = ({ children }) => {
-    const { 
-        error, 
-        authState, 
-        loginWithGoogle, 
-        loginWithEmailAndPassword, 
-        signUpWithEmailAndPassword, 
+    const {
+        error,
+        authState,
+        loginWithGoogle,
+        loginWithEmailAndPassword,
+        signUpWithEmailAndPassword,
         logout
     } = container.resolve("AuthViewModel");
 
     return (
-        <AuthViewModelContext.Provider value={{ 
-            error, 
-            authState, 
-            loginWithGoogle, 
-            loginWithEmailAndPassword, 
-            signUpWithEmailAndPassword, 
+        <AuthViewModelContext.Provider value={{
+            error,
+            authState,
+            loginWithGoogle,
+            loginWithEmailAndPassword,
+            signUpWithEmailAndPassword,
             logout
         }}>
             {children}

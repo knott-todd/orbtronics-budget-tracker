@@ -1,22 +1,15 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
-import TextInputField from "../../../../components/TextInputField";
-import NewBudgetlogView from "./NewBudgetLogView";
-import NewLogButton from "../components/ui/NewLogButton";
-import LogListItem from "../components/LogListItem";
-import { useLogsViewModelContext } from "../contexts/LogsViewModelContext";
-import { useCategoriesViewModelContext } from "../contexts/CategoriesViewModelContext";
-import { useEffect, useState } from "react";
-import { useAuthViewModelContext } from "../../../auth/presentation/contexts/AuthViewModelContext";
-import { Button, Container, Divider, Typography } from "@mui/material";
+import MedSpacer from "@components/MedSpacer";
+import { Divider } from "@mui/material";
+import useCategory from "features/budgeting/hooks/useCategory";
+import { useLogs } from "features/budgeting/hooks/useLogs";
+import { filterLogsByCategoryId } from "features/budgeting/utils/filters";
+import React from "react";
+import { useParams } from "react-router-dom";
+import PageContainer from "../../../../layout/PageContainer";
+import AppBarTitleAndExit from "../components/AppBarTitleAndExit";
 import IncomeExpenseBalanceHeader from "../components/IncomeExpenseBalanceHeader";
 import MonthlyGroupedLogs from "../components/MonthlyGroupedLogs";
-import AppBarTitleAndExit from "../components/AppBarTitleAndExit";
-import React from "react";
-import PageContainer from "../../../../layout/PageContainer";
-import MedSpacer from "@components/MedSpacer";
-import { filterLogsByCategoryId } from "features/budgeting/utils/filters";
-import { useLogs } from "features/budgeting/hooks/useLogs";
-import useCategory from "features/budgeting/hooks/useCategory";
+import NewLogButton from "../components/ui/NewLogButton";
 
 export default function CategoryLogsView() {
 
@@ -26,20 +19,20 @@ export default function CategoryLogsView() {
 
     return (
         <PageContainer>
-            
+
             {/* App bar */}
-            <AppBarTitleAndExit title={category.name} editPath={`/categories/${id}/edit`}/>
-            
+            <AppBarTitleAndExit title={category.name} editPath={`/categories/${id}/edit`} />
+
             <MedSpacer />
 
             {/* Category in-out-balance */}
-            <IncomeExpenseBalanceHeader 
-                incomeTitle={`${category.name} Budget`} 
-                expenseTitle={`${category.name} Spending`} 
-                netExpenses={category.netExpenses}  
-                netIncome={category.budget} 
-                balance={category.balance}/>
-            
+            <IncomeExpenseBalanceHeader
+                incomeTitle={`${category.name} Budget`}
+                expenseTitle={`${category.name} Spending`}
+                netExpenses={category.netExpenses}
+                netIncome={category.budget}
+                balance={category.balance} />
+
             <Divider />
 
             {/* Month */}

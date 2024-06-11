@@ -1,4 +1,4 @@
-export async function populateFormWithEvent (e, setFormData) {
+export async function populateFormWithEvent(e, setFormData) {
     const { name, value } = e.target;
 
     setFormData(formData => ({

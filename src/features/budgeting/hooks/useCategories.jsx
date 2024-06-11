@@ -1,6 +1,6 @@
 import { useAuthViewModelContext } from "features/auth/presentation/contexts/AuthViewModelContext";
-import { useCategoriesViewModelContext } from "../presentation/contexts/CategoriesViewModelContext";
 import { useEffect } from "react";
+import { useCategoriesViewModelContext } from "../presentation/contexts/CategoriesViewModelContext";
 
 export const useCategories = () => {
 
@@ -8,7 +8,7 @@ export const useCategories = () => {
     const { authState } = useAuthViewModelContext();
 
     useEffect(() => {
-        if(authState.user) {
+        if (authState.user) {
             getCategories(authState.user.uid)
         }
     }, [])

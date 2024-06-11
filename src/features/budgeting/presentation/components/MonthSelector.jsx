@@ -1,6 +1,6 @@
-import React from "react";
-import { IconButton, Stack, Typography } from "@mui/material";
 import { ArrowLeft, ArrowRightSharp } from "@mui/icons-material";
+import { IconButton, Stack, Typography } from "@mui/material";
+import React from "react";
 import { formatMonthYear } from "../../utils/formatters";
 
 const MonthSelector = ({ month, setMonth }) => {

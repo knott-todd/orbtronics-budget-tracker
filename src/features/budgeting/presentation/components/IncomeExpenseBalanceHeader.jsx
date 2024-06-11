@@ -1,20 +1,17 @@
 import { Divider, Stack, Typography } from "@mui/material";
-import { useLogsViewModelContext } from "../contexts/LogsViewModelContext";
-import { currencyFormatter, formatCurrencyWithMaxFigures } from "../../utils/formatters";
-import MedSpacer from "../../../../components/MedSpacer";
-import { useEffect, useState } from "react";
-import { useAuthViewModelContext } from "../../../auth/presentation/contexts/AuthViewModelContext";
 import React from "react";
+import MedSpacer from "../../../../components/MedSpacer";
+import { formatCurrencyWithMaxFigures } from "../../utils/formatters";
 
 export default function IncomeExpenseBalanceHeader({ incomeTitle, expenseTitle, netIncome, netExpenses, balance }) {
 
     return (
         <>
-            <Stack 
-                direction={'row'} 
-                divider={<Divider orientation='vertical' flexItem />} 
-                spacing={{xs: 2, sm: 5, lg: 10}} 
-                alignItems={'flex-end'} 
+            <Stack
+                direction={'row'}
+                divider={<Divider orientation='vertical' flexItem />}
+                spacing={{ xs: 2, sm: 5, lg: 10 }}
+                alignItems={'flex-end'}
                 justifyContent={'center'}>
 
                 {/* Column */}

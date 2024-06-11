@@ -5,31 +5,31 @@ import FormContainer from "layout/FormContainer";
 import React from "react";
 import DollarAmountInput from "./DollarAmountInput";
 
-export default function CategoryForm({formData, setFormData, handleChange, onSubmit}) {
+export default function CategoryForm({ formData, setFormData, handleChange, onSubmit }) {
 
-    function toggleIsIncomeCategory (e) {
+    function toggleIsIncomeCategory(e) {
         e.preventDefault()
-        setFormData({...formData, isIncome: !formData.isIncome})
+        setFormData({ ...formData, isIncome: !formData.isIncome })
     }
-    
+
     return (
         <FormContainer>
             {/* Form */}
             <form>
 
                 {/* Income or Expense */}
-                <Button 
-                    fullWidth 
-                    color={formData.isIncome ? 'success' : 'error'} 
+                <Button
+                    fullWidth
+                    color={formData.isIncome ? 'success' : 'error'}
                     onClick={toggleIsIncomeCategory}
                 >
-                        {formData.isIncome ? 'Income' : 'Expense'}
+                    {formData.isIncome ? 'Income' : 'Expense'}
                 </Button>
 
                 {/* Name */}
-                <TextInputField 
-                    value={formData.name} 
-                    handleChange={handleChange} 
+                <TextInputField
+                    value={formData.name}
+                    handleChange={handleChange}
                     label="Name"
                     name={'name'} />
 

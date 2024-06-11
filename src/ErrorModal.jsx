@@ -1,6 +1,6 @@
 import LargeSpacer from "@components/LargeSpacer";
 import MedSpacer from "@components/MedSpacer";
-import { Alert, Button, Container, Modal, Typography } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 import React from "react";
 
 export default function ErrorModal({ error, resetErrorBoundary }) {

@@ -1,7 +1,6 @@
-import React from "react";
 import { Container } from "@mui/material";
 import { styled } from "@mui/system";
-import LargeSpacer from "components/LargeSpacer";
+import React from "react";
 
 const StyledContainer = styled(Container)({
     marginBottom: "150px",

@@ -1,4 +1,4 @@
-import { Button, Fab } from "@mui/material";
+import { Fab } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export default function NewLogButton() {
@@ -21,6 +21,6 @@ export default function NewLogButton() {
         //     fullWidth
         // >+ New Entry</Button>
 
-        <Fab role="link" to="/budget-logs/new" component={Link} sx={{position: 'fixed', right: 40, bottom: 80}} variant="extended" color="primary">+ New Entry</Fab>
+        <Fab role="link" to="/budget-logs/new" component={Link} sx={{ position: 'fixed', right: 40, bottom: 80 }} variant="extended" color="primary">+ New Entry</Fab>
     );
 }

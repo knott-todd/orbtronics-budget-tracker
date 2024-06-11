@@ -6,7 +6,7 @@ const defaultCategoriesViewModel = {
     category: null,
     error: null,
     month: new Date(),
-    setMonth: () => {},
+    setMonth: () => { },
     getCategories: () => Promise.resolve(),
     getCategory: () => Promise.resolve(),
     createCategory: () => Promise.resolve(),

@@ -1,7 +1,5 @@
 import { Navigate, useLocation } from "react-router-dom";
-import HomeView from "../../../MainRouter";
 import { useAuthViewModelContext } from "./contexts/AuthViewModelContext";
-import LoginView from "./views/LoginView";
 
 export default function AuthWrapper() {
     const { authState } = useAuthViewModelContext();

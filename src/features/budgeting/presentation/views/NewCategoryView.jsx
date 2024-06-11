@@ -1,16 +1,9 @@
-import { Link } from "react-router-dom";
-import TextInputField from "../../../../components/TextInputField";
-import { useState } from "react";
-import { useCategoriesViewModelContext } from "../contexts/CategoriesViewModelContext";
-import { useAuthViewModelContext } from "../../../auth/presentation/contexts/AuthViewModelContext";
-import { Button, Container, MenuItem, TextField } from "@mui/material";
-import DollarAmountInput from "../components/forms/DollarAmountInput";
-import ThinSpacer from "../../../../components/ThinSpacer";
-import AppBarTitleAndExit from "../components/AppBarTitleAndExit";
-import CategoryTypesDropdown from "../components/forms/CategoryTypesDropdown";
-import React from "react";
-import CategoryForm from "../components/forms/CategoryForm";
+import React, { useState } from "react";
 import { populateFormWithEvent } from "utils/populateFormWithEvent";
+import { useAuthViewModelContext } from "../../../auth/presentation/contexts/AuthViewModelContext";
+import AppBarTitleAndExit from "../components/AppBarTitleAndExit";
+import CategoryForm from "../components/forms/CategoryForm";
+import { useCategoriesViewModelContext } from "../contexts/CategoriesViewModelContext";
 
 export default function NewCategoryView() {
 
@@ -27,21 +20,21 @@ export default function NewCategoryView() {
     const { authState } = useAuthViewModelContext();
 
     // Handlers
-    function handleCreateCategory (e) {
+    function handleCreateCategory(e) {
         e.preventDefault();
 
-        if(authState.user) {
+        if (authState.user) {
             createCategory(authState.user.uid, formData.name, formData.type, formData.amount, formData.isIncome)
         }
     }
 
-    function handleChange (e) {
+    function handleChange(e) {
         populateFormWithEvent(e, setFormData)
     }
 
     return (
         <>
-            
+
             {/* App bar */}
             <AppBarTitleAndExit title={`New ${formData.isIncome ? 'Income' : 'Expense'} Category`} />
 

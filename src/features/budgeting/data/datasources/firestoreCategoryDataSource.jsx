@@ -1,7 +1,6 @@
-import { onSnapshot, updateDoc, where, collection, addDoc, deleteDoc, getDoc, getDocs, query, doc } from "firebase/firestore";
-import { firestore } from "../../../../services/firebaseConfig";
-import { useCollectionData } from 'react-firebase-hooks/firestore';
+import { addDoc, collection, deleteDoc, doc, getDoc, onSnapshot, query, updateDoc, where } from "firebase/firestore";
 import { Subject, finalize } from "rxjs";
+import { firestore } from "../../../../services/firebaseConfig";
 
 export async function createCategory(userID, name, type, value, isIncome) {
     try {
@@ -20,7 +19,7 @@ export async function createCategory(userID, name, type, value, isIncome) {
     }
 }
 
-export async function getCategories (userID) {
+export async function getCategories(userID) {
     try {
 
         const categoriesRef = collection(firestore, 'categories');

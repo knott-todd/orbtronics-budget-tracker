@@ -1,8 +1,7 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useAuthViewModelContext } from "../../../auth/presentation/contexts/AuthViewModelContext";
 import { useLogsViewModelContext } from "../contexts/LogsViewModelContext";
 import IncomeExpenseBalanceHeader from "./IncomeExpenseBalanceHeader";
-import React from "react";
 
 export default function NetIncomeExpenseBalanceHeader() {
 
@@ -16,11 +15,11 @@ export default function NetIncomeExpenseBalanceHeader() {
     }, []);
 
     return (
-        <IncomeExpenseBalanceHeader 
-            incomeTitle={'Money In'} 
-            expenseTitle={'Money Out'} 
-            netExpenses={netExpenses} 
-            netIncome={netIncome} 
-            balance={balance}/>
+        <IncomeExpenseBalanceHeader
+            incomeTitle={'Money In'}
+            expenseTitle={'Money Out'}
+            netExpenses={netExpenses}
+            netIncome={netIncome}
+            balance={balance} />
     );
 }

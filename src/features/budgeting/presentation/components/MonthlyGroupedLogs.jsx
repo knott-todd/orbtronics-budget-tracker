@@ -1,10 +1,9 @@
-import { Accordion, AccordionDetails, AccordionSummary, List, Typography } from "@mui/material";
-import LogListItem from "./LogListItem";
-import { useEffect, useState } from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import React from "react";
+import { Accordion, AccordionDetails, AccordionSummary, List, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import LogListItem from "./LogListItem";
 
-export default function MonthlyGroupedLogs({ logs, hideCategory=undefined }) {
+export default function MonthlyGroupedLogs({ logs, hideCategory = undefined }) {
 
     const [groupedLogs, setGroupedLogs] = useState({});
     const [sortedMonthYears, setSortedMonthYears] = useState([]);
@@ -23,18 +22,18 @@ export default function MonthlyGroupedLogs({ logs, hideCategory=undefined }) {
 
     function groupLogsByMonthYear(logs) {
         const groupedLogs = {};
-    
+
         logs.forEach(log => {
             const date = new Date(log.timestamp.toMillis());
             const monthYear = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}`; // YYYY-MM format
-    
+
             if (!groupedLogs[monthYear]) {
                 groupedLogs[monthYear] = [];
             }
-    
+
             groupedLogs[monthYear].push(log);
         });
-    
+
         return groupedLogs;
     }
 
@@ -48,16 +47,16 @@ export default function MonthlyGroupedLogs({ logs, hideCategory=undefined }) {
     }
 
     return (
-        
+
         <div className="expanded scrollable">
             <List>
                 {sortedMonthYears.map((monthYear, i) => (
-                    <Accordion disableGutters defaultExpanded={i === 0} elevation={0} sx={{margin: 0, root: {height: '15px'}}} key={monthYear}>
+                    <Accordion disableGutters defaultExpanded={i === 0} elevation={0} sx={{ margin: 0, root: { height: '15px' } }} key={monthYear}>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls={`${monthYear}-content`}
                             id={`${monthYear}-header`}
-                            
+
                         >
                             <Typography>{formatMonthYear(monthYear)}</Typography>
                         </AccordionSummary>
