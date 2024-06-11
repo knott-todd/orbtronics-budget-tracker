@@ -30,7 +30,7 @@ export default function EditBudgetlogView() {
     function handleUpdate(e) {
 
         e.preventDefault();
-        updateLog(id, formData.category.id, formData.category.name, (formData.absoluteAmount * (formData.isIncome ? 1 : -1)), formData.description)
+        updateLog(id, formData.category.id, formData.category.name, (Math.abs(formData.absoluteAmount) * (formData.isIncome ? 1 : -1)), formData.description)
 
     }
 

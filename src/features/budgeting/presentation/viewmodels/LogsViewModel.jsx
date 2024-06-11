@@ -94,7 +94,7 @@ export default function LogsViewModel({
 
     // Create a new log
     async function createLog(userID, categoryID, categoryName, amount, description) {
-        const { result, error } = await CreateLogUseCase.execute(userID, categoryID, categoryName, amount, description);
+        const { result, error } = await CreateLogUseCase.execute(userID, categoryID, categoryName, parseInt(amount), description);
         setError(error);
         if (error) {
             showBoundary(error)
@@ -107,7 +107,9 @@ export default function LogsViewModel({
 
     // Update a log
     async function updateLog(id, categoryID, categoryName, amount, description) {
-        const { result, error } = await UpdateLogUseCase.execute(id, categoryID, categoryName, amount, description);
+        console.log("Updating")
+        console.log(id, amount)
+        const { result, error } = await UpdateLogUseCase.execute(id, categoryID, categoryName, parseInt(amount), description);
         setError(error);
         if (error) {
             showBoundary(error)

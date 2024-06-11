@@ -116,7 +116,7 @@ export default function CategoriesViewModel({
 
     // Create a new category
     async function createCategory(userID, name, type, value, isIncome) {
-        const { result, error } = await CreateCategoryUseCase.execute(userID, name, type, value, isIncome);
+        const { result, error } = await CreateCategoryUseCase.execute(userID, name, type, parseInt(value), isIncome);
         setError(error);
         if (error) {
             showBoundary(error)

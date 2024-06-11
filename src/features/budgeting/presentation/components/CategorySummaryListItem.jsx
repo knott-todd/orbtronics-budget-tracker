@@ -18,19 +18,19 @@ export default function CategorySummaryListItem({ category }) {
                         {category.isIncome ? (
                             <>
                                 {/* Actual/expected income progress bar */}
-                                <LinearProgress
+                                {category.budget && <LinearProgress
                                     sx={{ height: 10 }}
                                     variant="determinate"
-                                    value={Math.min(Math.abs(category.netIncome), category.budget) / category.budget * 100} />
+                                    value={Math.min(Math.abs(category.netIncome), category.budget) / category.budget * 100} />}
                             </>
 
                         ) : (
                             <>
                                 {/* Category balance progress bar */}
-                                <LinearProgress
+                                {category.balance && <LinearProgress
                                     sx={{ height: 10 }}
                                     variant="determinate"
-                                    value={Math.min(Math.abs(category.netExpenses), category.budget) / category.budget * 100} />
+                                    value={Math.min(Math.abs(category.netExpenses), category.budget) / category.budget * 100} />}
                             </>
                         )}
 

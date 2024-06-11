@@ -1,5 +1,5 @@
 import { Box, Button, Container, Link, Stack, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { populateFormWithEvent } from "utils/populateFormWithEvent";
 import { object, ref, string } from "yup";
@@ -11,10 +11,7 @@ import { useAuthViewModelContext } from "../contexts/AuthViewModelContext";
 export default function SignupView() {
 
     const { loginWithGoogle, signUpWithEmailAndPassword, error } = useAuthViewModelContext();
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-
+    
     const [formData, setFormData] = useState({
         email: "",
         password: "",
@@ -28,7 +25,14 @@ export default function SignupView() {
 
     useEffect(() => {
         if (error) {
-            setErrors(errors => ({ ...errors, ...error }))
+
+            const newError = {}
+
+            newError[error.path] = error.message
+            console.log(error)
+            console.log(newError)
+            console.log(errors.email)
+            setErrors(errors => ({ ...errors, ...newError }))
         }
     }, [error])
 
@@ -78,12 +82,12 @@ export default function SignupView() {
                 <form>
                     {/* Email */}
                     <TextInputField
-                        required
+                        // required
                         value={formData.email}
                         handleChange={handleChange}
                         label="Email"
                         name={'email'}
-                        error={errors.email !== null}
+                        error={(errors.email !== undefined)}
                         helperText={errors.email}
                     />
 
@@ -94,7 +98,7 @@ export default function SignupView() {
                         value={formData.password}
                         handleChange={handleChange}
                         label="Password"
-                        error={errors.password !== null}
+                        error={errors.password !== undefined}
                         helperText={errors.password}
                         type='password'
                     />
@@ -106,7 +110,7 @@ export default function SignupView() {
                         value={formData.confirm}
                         handleChange={handleChange}
                         label="Confirm Password"
-                        error={errors.password !== null}
+                        error={errors.password !== undefined}
                         helperText={errors.password}
                         type='password'
                     />
