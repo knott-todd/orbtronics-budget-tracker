@@ -14,7 +14,50 @@ Welcome to the Orbtronics Budget Tracker! This web application allows you to man
 - View budget summary and detailed breakdown
 - Responsive and user-friendly interface
 
-### Getting Started
+## Installation Guide for Developers
+
+### Prerequisites
+
+- Ensure you have [Node.js](https://nodejs.org/) installed.
+- Install [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/).
+
+### Installation Steps
+
+1. **Clone the Repository**
+    
+    ```
+    git clone https://github.com/knott-todd/orbtronics-budget-tracker
+    cd budget-tracker
+    ```
+    
+2. **Install Dependencies**
+    
+    ```
+    npm install
+    ```
+    
+3. **Run the Application**
+    
+    ```
+    npm run dev
+    ```
+    
+    A local development server would be started, and the link will be in the terminal.
+    
+4. **Build for Production**
+    
+    ```
+    npm run build
+    ```
+    
+5. **Deploy (triggers GitHub Pages update)**
+    
+    ```
+    npm run deploy
+    ```
+   
+
+### Getting Started (user)
 
 1. **Accessing the Application**
     - Visit the web application at https://knott-todd.github.io/orbtronics-budget-tracker/.
@@ -58,48 +101,6 @@ Welcome to the Orbtronics Budget Tracker! This web application allows you to man
         - When adding or editing an entry in the "Add Entry" or "Edit Entry" section, select the appropriate category from the dropdown menu.
         - This ensures that the entry is categorized correctly for accurate budget tracking and reporting.
 
-## Installation Guide for Developers
-
-### Prerequisites
-
-- Ensure you have [Node.js](https://nodejs.org/) installed.
-- Install [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/).
-
-### Installation Steps
-
-1. **Clone the Repository**
-    
-    ```
-    git clone https://github.com/knott-todd/orbtronics-budget-tracker
-    cd budget-tracker
-    ```
-    
-2. **Install Dependencies**
-    
-    ```
-    npm install
-    ```
-    
-3. **Run the Application**
-    
-    ```
-    npm run dev
-    ```
-    
-    A local development server would be started, and the link will be in the terminal.
-    
-4. **Build for Production**
-    
-    ```
-    npm run build
-    ```
-    
-5. **Deploy (triggers GitHub Pages update)**
-    
-    ```
-    npm run deploy
-    ```
-    
 
 # Design Documentation
 
