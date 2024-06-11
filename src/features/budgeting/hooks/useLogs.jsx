@@ -12,5 +12,9 @@ export const useLogs = () => {
         }
     }, []);
 
+    useEffect(() => {
+        console.log(logs)
+    }, [logs])
+
     return logs;
 };

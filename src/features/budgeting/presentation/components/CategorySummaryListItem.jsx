@@ -4,9 +4,6 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function CategorySummaryListItem({ category }) {
-    useEffect(() => {
-        console.log(category)
-    }, [category])
     return (
         <>
             <ListItemButton component={Link} to={`/categories/${category.id}`}>

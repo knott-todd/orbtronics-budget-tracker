@@ -49,8 +49,8 @@ export default function LogsViewModel({
     async function getLogs(userID) {
 
         if (stream) {
-
-            console.log("Stream already running")
+            
+            setLogs(logs => [...logs])
 
         } else {
             const { result, error } = await GetLogsUseCase.execute(userID);
