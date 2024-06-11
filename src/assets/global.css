@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* color: white; */
+}
+
+ul {
+  list-style-type: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.expanded {
+    flex: 1;
+}
+
+.scrollable {
+  overflow-y: auto;
+}
+
+button {
+  /* width: 100%; */
+  padding: 15px 0px;
+  border: none;
+}
+
+.margin {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: rgb(7, 202, 7);
+}
+
+/* input[type=text] {
+  padding: 5px;
+} */
+
+/* a {
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  color: initial;
+} */
+
+/* body {
+  background-color: rgb(8, 5, 14);
+} */

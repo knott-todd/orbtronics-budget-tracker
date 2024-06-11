@@ -1,0 +1,103 @@
+/f  [error opening dir]
+./src
+├── App.jsx
+├── assets
+│   ├── global.css
+│   └── navbar.css
+├── components
+│   ├── LargeSpacer.jsx
+│   ├── MedSpacer.jsx
+│   ├── Navbar.jsx
+│   ├── Spacer.jsx
+│   ├── TextInputField.jsx
+│   └── ThinSpacer.jsx
+├── DI
+│   └── ioc.jsx
+├── features
+│   ├── auth
+│   │   ├── data
+│   │   │   ├── datasources
+│   │   │   │   ├── firebaseAuthDataSource.jsx
+│   │   │   │   └── firestoreUserDataSource.jsx
+│   │   │   └── repositories
+│   │   │       └── firebaseAuthRepository.jsx
+│   │   ├── domain
+│   │   │   └── usecases
+│   │   │       ├── loginWithEmailAndPasswordUseCase.jsx
+│   │   │       ├── loginWithGoogleUseCase.jsx
+│   │   │       ├── logoutUseCase.jsx
+│   │   │       └── signUpWithEmailAndPasswordUseCase.jsx
+│   │   └── presentation
+│   │       ├── AuthWrapper.jsx
+│   │       ├── components
+│   │       ├── contexts
+│   │       │   └── AuthViewModelContext.jsx
+│   │       ├── viewmodels
+│   │       │   └── AuthViewModel.jsx
+│   │       └── views
+│   │           ├── LoginView.jsx
+│   │           ├── ProfileView.jsx
+│   │           └── SignupView.jsx
+│   └── budgeting
+│       ├── assets
+│       │   └── styles.css
+│       ├── data
+│       │   ├── datasources
+│       │   │   ├── firestoreCategoryDataSource.jsx
+│       │   │   └── firestoreLogsDataSource.jsx
+│       │   └── repositories
+│       │       ├── firestoreCategoryRepository.jsx
+│       │       └── firestoreLogsRepository.jsx
+│       ├── domain
+│       │   └── usecases
+│       │       ├── categories
+│       │       │   ├── createCategoryUseCase.jsx
+│       │       │   ├── deleteCategoryUseCase.jsx
+│       │       │   ├── getCategoriesUseCase.jsx
+│       │       │   ├── getCategoryUseCase.jsx
+│       │       │   └── updateCategoryUseCase.jsx
+│       │       └── logs
+│       │           ├── createLogUseCase.jsx
+│       │           ├── deleteLogUseCase.jsx
+│       │           ├── getLogsUseCase.jsx
+│       │           ├── getLogUseCase.jsx
+│       │           └── updateLogUseCase.jsx
+│       ├── presentation
+│       │   ├── components
+│       │   │   ├── AppBarTitleAndExit.jsx
+│       │   │   ├── CategoryDropdown.jsx
+│       │   │   ├── CategorySummaryList.jsx
+│       │   │   ├── CategoryTypesDropdown.jsx
+│       │   │   ├── DollarAmountInput.jsx
+│       │   │   ├── IncomeExpenseBalanceHeader.jsx
+│       │   │   ├── LogAmountInput.jsx
+│       │   │   ├── LogListItem.jsx
+│       │   │   ├── MonthlyGroupedLogs.jsx
+│       │   │   ├── NetIncomeExpenseBalanceHeader.jsx
+│       │   │   └── NewLogButton.jsx
+│       │   ├── contexts
+│       │   │   ├── CategoriesViewModelContext.jsx
+│       │   │   └── LogsViewModelContext.jsx
+│       │   ├── viewmodels
+│       │   │   ├── CategoriesViewModel.jsx
+│       │   │   └── LogsViewModel.jsx
+│       │   └── views
+│       │       ├── BudgetLogsView.jsx
+│       │       ├── CategoryLogsView.jsx
+│       │       ├── CategorySummaryListView.jsx
+│       │       ├── EditBudgetLogView.jsx
+│       │       ├── EditCategoryView.jsx
+│       │       ├── NewBudgetLogView.jsx
+│       │       └── NewCategoryView.jsx
+│       └── utils
+│           ├── calculateIncomeExpense.jsx
+│           └── formatters.jsx
+├── main.jsx
+├── services
+│   └── firebaseConfig.jsx
+├── theme.jsx
+├── utils
+└── views
+    └── HomeView.jsx
+
+33 directories, 66 files
